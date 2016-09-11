@@ -17,6 +17,12 @@ function GetInstituciones(){
 	return $resultado;
 }
 
+function GetInstitucionesU(){
+	$x = new createConnection();
+	$x -> connectToDatabase();
+	$resultado = mysqli_query($x->myconn,"SELECT * FROM Institucion I WHERE I.status =1");																
+	return $resultado;
+}
 
 function GetCitasHospital(){	
 	$x = new createConnection();
