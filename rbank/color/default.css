@@ -1,0 +1,46 @@
+#map{
+
+    width: 100%;
+    height: 100%;
+}
+
+
+a, a:hover{
+	color: #FE2E2E;
+}
+.navbar-default{
+	background: #FE2E2E;
+}
+
+.form-control:focus {
+  border-color: #FE2E2E;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 2px #FE2E2E;
+          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 2px #FE2E2E;
+}
+
+.service .carousel-indicators .active {
+	background: #FE2E2E;
+}
+
+.btn-theme {
+	background: #FE2E2E;
+}
+
+.lb-album li > a span{
+	background: #FE2E2E;
+	background: -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,0.56) 0%, #FE2E2E 100%);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(255,255,255,0.56)), color-stop(100%,#FE2E2E));
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,0.56) 0%,#FE2E2E 100%);
+	background: -o-radial-gradient(center, ellipse cover, rgba(255,255,255,0.56) 0%,#FE2E2E 100%);
+	background: -ms-radial-gradient(center, ellipse cover, rgba(255,255,255,0.56) 0%,#FE2E2E 100%);
+	background: radial-gradient(center, ellipse cover, rgba(255,255,255,0.56) 0%,#FE2E2E 100%);
+}
+.lb-overlay{
+	background: #FE2E2E;
+	background: -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,0.56) 0%, #FE2E2E 100%);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(255,255,255,0.56)), color-stop(100%,#FE2E2E));
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,0.56) 0%,#FE2E2E 100%);
+	background: -o-radial-gradient(center, ellipse cover, rgba(255,255,255,0.56) 0%,#FE2E2E 100%);
+	background: -ms-radial-gradient(center, ellipse cover, rgba(255,255,255,0.56) 0%,#FE2E2E 100%);
+	background: radial-gradient(center, ellipse cover, rgba(255,255,255,0.56) 0%,#FE2E2E 100%);
+}
