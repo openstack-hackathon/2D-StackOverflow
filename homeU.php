@@ -25,54 +25,66 @@
       }
 
 
-	function setMarkers(map) 
-	{
+		function setMarkers(map) {
 			
-		var image = {
-			url: './images/bloodflag.png',
-			// This marker is 20 pixels wide by 32 pixels high.
-			size: new google.maps.Size(32, 32),
-			// The origin for this image is (0, 0).
-			origin: new google.maps.Point(0, 0),
-			// The anchor for this image is the base of the flagpole at (0, 32).
-			anchor: new google.maps.Point(0, 32)
-		};			
-		
-		var shape = {
-			coords: [1, 2, 2, 4, 18, 20, 18, 1],
-			type: 'poly'
-		};		
-		
+			
+			
+		var hospitales = [
 		<?php 
 		$resultado = GetInstitucionesU();
 		$rowcount = mysqli_num_rows($resultado);
 		$i = 0;
-		while($fila = $resultado->fetch_assoc()){
+		while ($fila = $resultado->fetch_assoc()){
 		?>
+			
+		['<?php echo $fila["Nombre"]; ?>', <?php echo $fila["Latitud"]; ?>, <?php echo $fila["Longitud"]; ?>, <?php echo $fila["PKInstitucion"]; ?>,'<?php echo $fila["Direccion"]; ?>']
+		<?php 
+		if($rowcount-1 != $i){ echo ","; } 
+		$i+=1; 
+		} ?>];  
+		var image = {
+		url: './images/bloodflag.png',
+		// This marker is 20 pixels wide by 32 pixels high.
+		size: new google.maps.Size(32, 32),
+		// The origin for this image is (0, 0).
+		origin: new google.maps.Point(0, 0),
+		// The anchor for this image is the base of the flagpole at (0, 32).
+		anchor: new google.maps.Point(0, 32)
+		};
+		  
+		var shape = {
+		coords: [1, 2, 2, 4, 18, 20, 18, 1],
+		type: 'poly'
+		};
+		
+		for (var i = 0; i < hospitales.length; i++) {
+		var hospital1 = hospitales[i];
+		var marker = new google.maps.Marker({
+		position: {lat: hospital1[1], lng: hospital1[2]},
+		map: map,
+		icon: image,
+		//shape: shape,
+		title: hospital1[0],
+		zIndex: hospital1[3]
+		});
 
-			var marker<?php echo $i; ?> = new google.maps.Marker({
-			position: {lat: <?php echo $fila["Latitud"]; ?>, lng: <?php echo $fila["Longitud"]; ?>},
-			map: map,
-			icon: image,
-			shape: shape,
-			title: <?php echo $fila["Nombre"]; ?>,
-			zIndex: <?php echo $fila["PKInstitucion"]; ?>
+		    //Info tool 
+		    var contentString = '<div id="content"><div id="siteNotice"></div>'+
+		      '<h1 id="firstHeading" class="firstHeading">'+hospital1[0]+'</h1>'+
+		      '<div id="bodyContent">'+
+		      '<p><b>'+hospital1[4]+'</b></p>'+
+		      '<p>Agendar Cita, <a href="php/agendarcita.php?v=ac&pki='+hospital1[3]+'">click Aquí</a></p>'+
+		      '</div></div>';
+
+			var infowindow = new google.maps.InfoWindow({
+				content: contentString
 			});
 
-			var infowindow<?php echo $i; ?> = new google.maps.InfoWindow({
-				content: '<div id="content"><div id="siteNotice"></div>'+
-			  '<h1 id="firstHeading" class="firstHeading"><?php echo $fila["Nombre"]; ?></h1>'+
-			  '<div id="bodyContent">'+
-			  '<p><b><?php echo $fila["Direccion"]; ?></b></p>'+
-			  '<p>Agendar Cita, <a href="php/agendarcita.php?v=ac&pki=<?php echo $fila["PKInstitucion"]; ?>">click Aquí</a></p>'+
-			  '</div></div>';
-			});
-
-			marker<?php echo $i; ?>.addListener('click', function() {
-				infowindow<?php echo $i; ?>.open(map, marker<?php echo $i; ?>);
-			});
-		<?php $i+=1; } ?>  
-	}
+		    marker.addListener('click', function() {
+		    	infowindow.open(map, marker);
+		 	 });
+		  }
+		}
 
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9iHyImLPrjVlvdRpgj6oIonptrvkItkM&callback=initMap"async defer></script>
