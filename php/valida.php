@@ -5,7 +5,7 @@ $x = new createConnection();
 $x -> connectToDatabase();
 $x -> selectDatabase();
 
-$resultado = mysql_query("SELECT Usuario, FKTipoDeUsuario, Nombre, Apellidos FROM Usuario WHERE Usuario = '".$_POST["user"]."' and Password = '".$_POST["pass"]."' ");
+$resultado = mysql_query("SELECT Usuario, FKTipoDeUsuario, Nombre, Apellidos, PKUsuario FROM Usuario WHERE Usuario = '".$_POST["user"]."' and Password = '".$_POST["pass"]."' ");
 $valido = mysql_num_rows($resultado);
 
 if (!$resultado) {
@@ -20,10 +20,14 @@ if($valido == 1)
 	session_start();
 	$row = mysql_fetch_row($resultado); 
 
-$cookie_name = 'usuario';
-$cookie_value = $row[2]." ".$row[3];
-setcookie($cookie_name, $cookie_value, time() + 6400, '/'); // 86400 = 1 day
-	
+	$cookie_name = 'usuario';
+	$cookie_value = $row[0];
+	setcookie($cookie_name, $cookie_value, time() + 6400, '/'); // 86400 = 1 day
+
+	$cookie_name = 'pkusuario';
+	$cookie_value = $row[4];
+	setcookie($cookie_name, $cookie_value, time() + 6400, '/'); // 86400 = 1 day
+
 	//Donador
 	if($row[1] == 1){
 		$_SESSION["rbnormaluser"] = md5($row[0]);

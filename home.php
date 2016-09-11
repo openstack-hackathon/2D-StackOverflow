@@ -24,13 +24,19 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-								<?php for($i =0; $i<20; $i++){ ?>
+								<?php 
+								$x = new createConnection();
+								$x -> connectToDatabase();
+								$x -> selectDatabase();
+								$resultado = mysql_query("SELECT * FROM Institucion I INNER JOIN UsuarioInstitucion U ON U.FKInstitucion = I.PKInstitucion WHERE U.FKUsuario = ".$_POST["pkusuario"]);																
+								for($i =0; $i<20; $i++){ 
+								?>
                                     <tr>
                                         <td>
 										<a href="donaciones.php?v=d&idins=">
 											<div class="media">
 												<span class="pull-left">
-													<img class="media-object" src="http://placehold.it/50x50" alt="">
+													<img class="media-object" src="images/b.png" alt="">
 												</span>
 												<div class="media-body">
 													<h5 class="media-heading"><strong>John Smith</strong>
