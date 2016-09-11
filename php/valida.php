@@ -32,7 +32,7 @@ else{
 	//Institucion
 	else if($row[1] == 2){
 		$_SESSION["rbinstitutionuser"] = md5($row[0]);
-		header("Location: ../home.php");
+		header("Location: ../home.php?v=h");
 	}
 	
 }
