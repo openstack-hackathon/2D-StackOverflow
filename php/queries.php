@@ -18,4 +18,40 @@ function GetInstituciones(){
 }
 
 
+function GetCitasHospital(){	
+	$x = new createConnection();
+	$x -> connectToDatabase();
+	$resultado = mysqli_query($x->myconn,
+	"SELECT C.Cita,U.Nombre,U.Apellidos,U.Usuario,T.TipoDeSangre,U.PKUsuario,C.PKCita
+	FROM Citas C 
+	INNER JOIN Usuario U ON U.PKUsuario = C.FKUsuario
+	INNER JOIN TipoDeSangre T ON T.PKTipoDeSangre = U.FKTipoDeSangre
+	WHERE C.status = 1
+	AND C.FKInstitucion = ".$_GET["idins"]);																
+	return $resultado;
+}
+
+
+function GetDonadorByID($PK){
+	$x = new createConnection();
+	$x -> connectToDatabase();
+	$resultado = mysqli_query($x->myconn,"SELECT CONCAT(Nombre,' ',Apellidos) AS Nombrecompleto FROM Usuario WHERE PKUsuario=$PK");
+	$valido = mysqli_num_rows($resultado);
+	$row = mysqli_fetch_row($resultado); 
+	return $row[0];	
+}
+
+function SaveCita($Comentarios, $PKD, $PKCita, $Donacion){
+	$x = new createConnection();
+	$x -> connectToDatabase();
+	$resultado = mysqli_query($x->myconn,
+	"UPDATE Citas SET comentario = $Comentarios WHERE 
+	=$PK");
+	
+	
+	$row = mysqli_fetch_row($resultado); 
+	return $row[0];	
+}
+
+
 ?>

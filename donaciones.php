@@ -14,8 +14,6 @@
                 </div>
                 <!-- /.row -->
 
-
-
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="table-responsive">
@@ -26,19 +24,22 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-								<?php for($i =0; $i<20; $i++){ ?>
+								<?php 
+								$resultado = GetCitasHospital();
+								while ($fila = $resultado->fetch_assoc()){
+								?>
                                     <tr>
                                         <td>
-										<a href="#">
+										<a href="cita.php?v=ci&pkd=<?php echo $fila["PKUsuario"]; ?>&pkc=<?php echo $fila["PKCita"]; ?>">
 											<div class="media">
 												<span class="pull-left">
-													<img class="media-object" src="http://placehold.it/50x50" alt="">
+													<img class="media-object" src="images/u.png" alt="">
 												</span>
 												<div class="media-body">
-													<h5 class="media-heading"><strong>John Smith</strong>
+													<h5 class="media-heading"><strong><?php echo $fila["Nombre"]." ".$fila["Apellidos"]." (".$fila["TipoDeSangre"].")"; ?></strong>
 													</h5>
-													<p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-													<p>Lorem ipsum dolor sit amet, consectetur...</p>
+													<p class="small text-muted"><i class="fa fa-clock-o"><?php echo $fila["Cita"]; ?></i></p>
+													<p><?php echo $fila["Usuario"]; ?></p>
 												</div>
 											</div>
 										</a>

@@ -27,7 +27,7 @@
                                 <tbody>
 								<?php 
 								$resultado = GetInstituciones();
-								while ($fila = $resultado->fetch_assoc()) {
+								while ($fila = $resultado->fetch_assoc()){
 								?>
                                     <tr>
                                         <td>
