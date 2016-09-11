@@ -5,26 +5,20 @@ class createConnection
     var $host="172.16.1.51";
     var $username="root";    // specify the sever details for mysql
     Var $password="root";
-    var $database="rbankstackx";
+    var $database="rbankstackxx";
     var $myconn;
 
     function connectToDatabase() // create a function for connect database
     {
-
         $conn= mysql_connect($this->host,$this->username,$this->password);
-
         if(!$conn)// testing the connection
         {
             die ("Cannot connect to the database");
         }
-
         else
         {
-
             $this->myconn = $conn;
-
-            echo "Connection established";
-
+            //echo "Connection established";
         }
 
         return $this->myconn;
