@@ -2,7 +2,8 @@
 
 class createConnection 
 {
-    var $host="172.16.1.51";
+    //var $host="172.16.1.51";
+	var $host="172.16.1.130";
     var $username="root";    // specify the sever details for mysql
     Var $password="root";
     var $database="rbankstackx";
