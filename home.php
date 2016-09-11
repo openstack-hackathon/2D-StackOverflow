@@ -27,22 +27,21 @@
 								<?php 
 								$x = new createConnection();
 								$x -> connectToDatabase();
-								$x -> selectDatabase();
-								$resultado = mysql_query("SELECT * FROM Institucion I INNER JOIN UsuarioInstitucion U ON U.FKInstitucion = I.PKInstitucion WHERE U.FKUsuario = ".$_POST["pkusuario"]);																
-								for($i =0; $i<20; $i++){ 
+								$resultado = mysqli_query($x->myconn,"SELECT I.PKInstitucion,I.Nombre,I.Direccion FROM Institucion I INNER JOIN UsuarioInstitucion U ON U.FKInstitucion = I.PKInstitucion WHERE U.FKUsuario = ".$_COOKIE["pkusuario"]." AND I.status =1 AND U.status =1");																
+								while ($fila = $resultado->fetch_assoc()) {
 								?>
                                     <tr>
                                         <td>
-										<a href="donaciones.php?v=d&idins=">
+										<a href="donaciones.php?v=d&idins=<?php echo $fila["PKInstitucion"]; ?>">
 											<div class="media">
 												<span class="pull-left">
 													<img class="media-object" src="images/b.png" alt="">
 												</span>
 												<div class="media-body">
-													<h5 class="media-heading"><strong>John Smith</strong>
+													<h5 class="media-heading"><strong><?php echo $fila["Nombre"]; ?></strong>
 													</h5>
-													<p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-													<p>Lorem ipsum dolor sit amet, consectetur...</p>
+													<p class="small text-muted">Direccion: <?php echo $fila["Direccion"]; ?></p>
+													<p></p>
 												</div>
 											</div>
 										</a>

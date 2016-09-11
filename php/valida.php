@@ -3,10 +3,9 @@ include_once "connection.php";
 
 $x = new createConnection();
 $x -> connectToDatabase();
-$x -> selectDatabase();
 
-$resultado = mysql_query("SELECT Usuario, FKTipoDeUsuario, Nombre, Apellidos, PKUsuario FROM Usuario WHERE Usuario = '".$_POST["user"]."' and Password = '".$_POST["pass"]."' ");
-$valido = mysql_num_rows($resultado);
+$resultado = mysqli_query($x->myconn,"SELECT Usuario, FKTipoDeUsuario, Nombre, Apellidos, PKUsuario FROM Usuario WHERE Usuario = '".$_POST["user"]."' and Password = '".$_POST["pass"]."' ");
+$valido = mysqli_num_rows($resultado);
 
 if (!$resultado) {
     echo 'Could not run query: ' . mysql_error();
@@ -18,7 +17,7 @@ if($valido == 1)
 	session_unset();
 	session_set_cookie_params(0);
 	session_start();
-	$row = mysql_fetch_row($resultado); 
+	$row = mysqli_fetch_row($resultado); 
 
 	$cookie_name = 'usuario';
 	$cookie_value = $row[0];
