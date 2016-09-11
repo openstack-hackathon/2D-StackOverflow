@@ -31,7 +31,7 @@ if($valido == 1)
 	//Donador
 	if($row[1] == 1){
 		$_SESSION["rbnormaluser"] = md5($row[0]);
-		header("Location: ../?usuarionormal");
+		header("Location: /rbank");
 	}
 	
 	//Institucion
