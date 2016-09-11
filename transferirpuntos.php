@@ -19,6 +19,9 @@
 							<?php 
 							$resultado = GetPerfilByUser($_COOKIE["pkusuario"]);
 							$row = mysqli_fetch_row($resultado); 
+							
+							$resultado2 = GetPerfilByUser($_GET["idam"]);
+							$row2 = mysqli_fetch_row($resultado2); 							
 							?>	
 						
 						<form action="php/transferencia.php" method="POST" >							
@@ -43,13 +46,26 @@
                                     <tr>
                                         <td>
 										<div class="form-group">
-										  <label for="usr">Puntos a transferir:</label>
+										  <label for="usr">Puntos a transferir a <?php echo $row2[0]." ".$row2[1]." (".$row2[2].")"; ?>:</label>
 										  <input type="text" class="form-control" id="puntosatransferir" name="puntosatransferir" >
 										</div>										
 										</td>
                                     </tr>
-									<hidden name="pku" id="pku" value="<?php $_GET[""]; ?>" />
-									<hidden name="pka" id="pka" value="<?php $_GET[""]; ?>" />
+                                    <tr>
+                                        <td>
+										<div class="form-group">
+										  <label for="usr">Puntos actuales de <?php echo $row2[2]; ?>:</label>
+										  <input type="text" class="form-control" value="<?php echo $row2[4]; ?>" disabled >
+										</div>										
+										</td>
+                                    </tr>
+									<input type="hidden" name="pka" value="<?php echo $_GET["idam"]; ?>" />
+									
+									<tr>
+									<td>
+										<button type="submit" class="btn btn-lg btn-success">Transferir</button>
+									</td>
+									</tr>
 								</tbody>
                             </table>
 						</form>

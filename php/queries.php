@@ -95,6 +95,21 @@ function AcumulaPuntos($PKU){
 	return $resultado;
 }
 
+function SumaPuntos($PKU,$Cantidad){
+	$x = new createConnection();
+	$x -> connectToDatabase();
+	$resultado = mysqli_query($x->myconn, "UPDATE Usuario SET puntos = puntos + $Cantidad WHERE PKUsuario = $PKU");
+	return $resultado;
+}
+
+function RestaPuntos($PKU,$Cantidad){
+	$x = new createConnection();
+	$x -> connectToDatabase();
+	$resultado = mysqli_query($x->myconn, "UPDATE Usuario SET puntos = puntos - $Cantidad WHERE PKUsuario = $PKU");
+	return $resultado;
+}
+
+
 function CancelarCita($PK){
 	$x = new createConnection();
 	$x -> connectToDatabase();
