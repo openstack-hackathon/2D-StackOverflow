@@ -5,7 +5,7 @@ class createConnection
     var $host="172.16.1.51";
     var $username="root";    // specify the sever details for mysql
     Var $password="root";
-    var $database="rbankstackxx";
+    var $database="rbankstackx";
     var $myconn;
 
     function connectToDatabase() // create a function for connect database
@@ -35,14 +35,14 @@ class createConnection
             echo "Cannot find the database ".$this->database;
 
         }
-         echo "Database selected..";       
+         //echo "Database selected..";       
     }
 
     function closeConnection() // close the connection
     {
         mysql_close($this->myconn);
 
-        echo "Connection closed";
+        //echo "Connection closed";
     }
 
 }
