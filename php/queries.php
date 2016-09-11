@@ -42,7 +42,10 @@ function GetAmigosByUser($PK){
 function GetPerfilByUser($PK){
 	$x = new createConnection();
 	$x -> connectToDatabase();
-	$resultado = mysqli_query($x->myconn," A.FKUsuario = $PK");																
+	$resultado = mysqli_query($x->myconn,"SELECT U.Nombre,U.Apellidos,U.Usuario,T.TipoDeSangre, U.puntos
+	FROM Usuario U
+	INNER JOIN TipoDeSangre T ON T.PKTipoDeSangre = U.FKTipoDeSangre
+	WHERE U.PKUsuario = $PK");																
 	return $resultado;
 }
 
@@ -82,6 +85,13 @@ function SaveCitaUsuario($PKCita, $PKU, $cita){
 	$x = new createConnection();
 	$x -> connectToDatabase();
 	$resultado = mysqli_query($x->myconn,"INSERT INTO Citas (FKInstitucion,FKUsuario,Cita,status) VALUES ($PKCita,$PKU,'$cita',1)");
+	return $resultado;
+}
+
+function AcumulaPuntos($PKU){
+	$x = new createConnection();
+	$x -> connectToDatabase();
+	$resultado = mysqli_query($x->myconn, "UPDATE Usuario SET puntos = puntos + 15 WHERE PKUsuario = $PKU");
 	return $resultado;
 }
 

@@ -25,7 +25,7 @@
       <div class="modal-body">
           <form class="form col-md-12 center-block" action="php/valida.php" method="post" >
             <div class="form-group">
-              <input type="text" class="form-control input-lg" placeholder="Correo" name="user" value="JUAN5@gmail.com" />
+              <input type="text" class="form-control input-lg" placeholder="Correo" name="user" value="JOSE2@gmail.com" />
             </div>
             <div class="form-group">
               <input type="password" class="form-control input-lg" placeholder="Password" name="pass" value="12345" />

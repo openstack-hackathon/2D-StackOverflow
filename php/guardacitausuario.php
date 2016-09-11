@@ -6,11 +6,10 @@ $PKCita = $_POST["cita"];
 $PKU = $_COOKIE["pkusuario"]; 
 $cita = $_POST["fechacita"]; 
 
-echo $cita;
-SaveCitaUsuario($PKCita, $PKU, $cita);
 $r = SaveCitaUsuario($PKCita, $PKU, $cita);
 
- if($r==1){
+if($r==1){
+
 	header("Location: ../homeU.php?v=h&g=v");	
 }
 else{

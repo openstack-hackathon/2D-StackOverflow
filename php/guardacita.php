@@ -9,6 +9,7 @@ $PKCita = $_POST["cita"];
 $r = SaveCita($Comentarios, $PKCita, $Donacion);
 
 if($r==1){
+AcumulaPuntos($PKU);
 header("Location: ../home.php?v=h&g=v");	
 }
 else{
