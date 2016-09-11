@@ -26,6 +26,7 @@ echo '<!DOCTYPE html>
   <script src="js/vendor/modernizr-2.8.3.min.js"></script>  
   <script src="js/jquery.bootstrap-touchspin.js"></script> 
   <script src="js/treeview.js"></script> 
+  <script src="js/functions.js"></script>
   <script src="js/main.js"></script>
 </head>
 <body>';

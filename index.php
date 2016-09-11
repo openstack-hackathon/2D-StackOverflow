@@ -1,4 +1,6 @@
 <?php
+/* Cargado de libreras JS/CSS */  
+  require_once("./php/librerias.php");
 ?>
  <div class="navbar navbar-default navbar-static-top">
       <div class="container">
@@ -105,6 +107,7 @@
 		</div>
       </div>
     </div>
-	
+
+  	
 <?php
 ?>
