@@ -7,12 +7,10 @@
                 <!-- Page Heading -->
                 <div class="row">
                     <div class="col-lg-12">
-						<div class="well"><h1>Citas Donacion</h1></div>
+						<div class="well"><h1>Instituciones</h1></div>
                     </div>
                 </div>
                 <!-- /.row -->
-
-
 
                 <div class="row">
                     <div class="col-lg-8">
@@ -20,14 +18,16 @@
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
-                                        <th>Page</th>
+                                        <th></th>
+										<th></th>
+										<th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
 								<?php for($i =0; $i<20; $i++){ ?>
                                     <tr>
                                         <td>
-										<a href="#">
+										<a href="donaciones.php?v=d&idins=">
 											<div class="media">
 												<span class="pull-left">
 													<img class="media-object" src="http://placehold.it/50x50" alt="">
@@ -41,6 +41,8 @@
 											</div>
 										</a>
 										</td>
+										<td></td>
+										<td></td>
                                     </tr>
 								<?php } ?>
                                 </tbody>
