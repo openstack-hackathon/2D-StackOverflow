@@ -41,16 +41,11 @@ function GetDonadorByID($PK){
 	return $row[0];	
 }
 
-function SaveCita($Comentarios, $PKD, $PKCita, $Donacion){
+function SaveCita($Comentarios, $PKCita, $Donacion){
 	$x = new createConnection();
 	$x -> connectToDatabase();
-	$resultado = mysqli_query($x->myconn,
-	"UPDATE Citas SET comentario = $Comentarios WHERE 
-	=$PK");
-	
-	
-	$row = mysqli_fetch_row($resultado); 
-	return $row[0];	
+	$resultado = mysqli_query($x->myconn,"UPDATE Citas SET comentario = '$Comentarios', donacionexitosa = $Donacion, status=3 WHERE PKCita = $PKCita");
+	return $resultado;
 }
 
 

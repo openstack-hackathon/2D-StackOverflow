@@ -30,6 +30,7 @@
 								
 							</div>
 							<input type="hidden" name="donador" value="<?php echo $_GET["pkd"]; ?>" />
+							<input type="hidden" name="cita" value="<?php echo $_GET["pkc"]; ?>" />
 						  <button type="submit" class="btn btn-lg btn-success">Guardar</button>
 						</form>
                         </div>
