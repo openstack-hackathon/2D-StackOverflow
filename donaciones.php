@@ -1,4 +1,5 @@
 <?php include_once "views/institutionhead.php"; ?>
+<?php include_once "php/queries.php"; ?>
 
 
         <div id="page-wrapper">
@@ -8,7 +9,7 @@
                 <!-- Page Heading -->
                 <div class="row">
                     <div class="col-lg-12">
-						<div class="well"><h1>Citas de </h1></div>
+						<div class="well"><h1>Citas de <?php echo GetEstablecimientoByID($_GET["idins"]) ?></h1></div>
                     </div>
                 </div>
                 <!-- /.row -->

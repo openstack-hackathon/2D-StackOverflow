@@ -1,4 +1,5 @@
 <?php include_once "views/institutionhead.php"; ?>
+<?php include_once "php/queries.php"; ?>
 
         <div id="page-wrapper">
 
@@ -25,9 +26,7 @@
                                 </thead>
                                 <tbody>
 								<?php 
-								$x = new createConnection();
-								$x -> connectToDatabase();
-								$resultado = mysqli_query($x->myconn,"SELECT I.PKInstitucion,I.Nombre,I.Direccion FROM Institucion I INNER JOIN UsuarioInstitucion U ON U.FKInstitucion = I.PKInstitucion WHERE U.FKUsuario = ".$_COOKIE["pkusuario"]." AND I.status =1 AND U.status =1");																
+								$resultado = GetInstituciones();
 								while ($fila = $resultado->fetch_assoc()) {
 								?>
                                     <tr>
