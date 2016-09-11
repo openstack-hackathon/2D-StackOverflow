@@ -24,6 +24,30 @@ function GetInstitucionesU(){
 	return $resultado;
 }
 
+function GetAmigosByUser($PK){
+	$x = new createConnection();
+	$x -> connectToDatabase();
+	$resultado = mysqli_query($x->myconn,"SELECT 
+	CONCAT(U.Nombre,' ',U.Apellidos) AS Nombrecompleto ,U.Usuario,A.FKAmigo,A.FKUsuario,T.TipoDeSangre
+	FROM Amigos A 
+	INNER JOIN Usuario U ON A.FKAmigo = U.PKUsuario
+	INNER JOIN TipoDeSangre T ON T.PKTipoDeSangre = U.FKTipoDeSangre
+	WHERE U.status = 1 AND A.status = 1
+	AND A.FKUsuario = $PK
+	");																
+	return $resultado;
+}
+
+
+function GetPerfilByUser($PK){
+	$x = new createConnection();
+	$x -> connectToDatabase();
+	$resultado = mysqli_query($x->myconn," A.FKUsuario = $PK");																
+	return $resultado;
+}
+
+
+
 function GetCitasHospital(){	
 	$x = new createConnection();
 	$x -> connectToDatabase();
