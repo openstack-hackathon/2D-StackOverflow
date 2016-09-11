@@ -1,12 +1,11 @@
 <?php 
-
 include_once "connection.php";
 
 $x = new createConnection();
 $x -> connectToDatabase();
 $x -> selectDatabase();
 
-$resultado = mysql_query("SELECT Usuario, FKTipoDeUsuario FROM Usuario WHERE Usuario = '".$_POST["user"]."' and Password = '".$_POST["pass"]."' ");
+$resultado = mysql_query("SELECT Usuario, FKTipoDeUsuario, Nombre, Apellidos FROM Usuario WHERE Usuario = '".$_POST["user"]."' and Password = '".$_POST["pass"]."' ");
 $valido = mysql_num_rows($resultado);
 
 if (!$resultado) {
@@ -14,18 +13,18 @@ if (!$resultado) {
     exit;
 }
 
-if($valido == 0)
+if($valido == 1)
 {
-	header("Location: ../?error");
-}
-else{
 	session_unset();
 	session_set_cookie_params(0);
 	session_start();
 	$row = mysql_fetch_row($resultado); 
+
+	setcookie( "userlogin", "anonymous", $date_of_expiry );
+	
 	//Donador
 	if($row[1] == 1){
-		$_SESSION["rbnormaluser"] = md5($row[0]);		
+		$_SESSION["rbnormaluser"] = md5($row[0]);
 		header("Location: ../?usuarionormal");
 	}
 	
@@ -36,7 +35,10 @@ else{
 	}
 	
 }
-
+else
+{
+	header("Location: ../?error");
+}
 $x -> closeConnection();
 
 ?>
