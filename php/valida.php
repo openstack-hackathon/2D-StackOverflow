@@ -10,6 +10,7 @@ $resultado = mysql_query("SELECT Usuario, FKTipoDeUsuario FROM Usuario WHERE Usu
 $valido = mysql_num_rows($resultado);
 
 
+
 if (!$resultado) {
     echo 'Could not run query: ' . mysql_error();
     exit;

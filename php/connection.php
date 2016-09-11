@@ -15,6 +15,7 @@ class createConnection
         {
             die ("Cannot connect to the database");
         }
+		
         else
         {
             $this->myconn = $conn;
