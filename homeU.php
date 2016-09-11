@@ -10,7 +10,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Logo</a>
+          <a class="navbar-brand" href="#"><img src="./images/logo1.png"></a>
         </div>
         <div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
@@ -151,7 +151,7 @@
       }
 
       var hospitales = [
-		  ['Hospital Civil de Guadalajara', 20.687834, -103.343919, 4],
+		  ['Hospital Merlos', 19.301994, -99.161621, 4],
 		  ['Hospital Cruz Roja', 20.679704, -103.342234, 5],
 		  ['Hospital Alcalde', 20.690855, -103.347631, 3],
 		  ['Hospital Civil de Guadalajara Fray antonio Alcalde', 20.687784, -103.344219, 2],
@@ -161,7 +161,7 @@
 		  ['Hospital Angeles del pedregal', 19.311251, -99.220849, 7],
 		  ['Hospital Central Sur de Alta Especialidad PEMEX', 19.308052, -99.218317, 8],
 		  ['Sedna Hospital', 19.303186, -99.174076, 9],
-		  ['Hospital Merlos', 19.301994, -99.161621, 10]
+		  ['Hospital Civil de Guadalajara', 20.687834, -103.343919, 10]
 		];
 
 		function setMarkers(map) {
