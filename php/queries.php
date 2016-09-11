@@ -49,4 +49,13 @@ function SaveCita($Comentarios, $PKCita, $Donacion){
 }
 
 
+function CancelarCita($PK){
+	$x = new createConnection();
+	$x -> connectToDatabase();
+	$resultado = mysqli_query($x->myconn,"UPDATE Citas SET status = 2 WHERE PKCita = $PK");
+	return $resultado;
+}
+
+
+
 ?>

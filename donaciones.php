@@ -3,7 +3,10 @@
 
 <!-- jQuery -->
 <script src="js/jquery.js"></script>
+<script src="js/jquery-ui-1.12.0.custom/jquery-ui.min.js"></script>
+<script src="js/jquery-ui-1.12.0.custom/jquery-ui.min.css"></script>
 <script src="js/donaciones.js"></script>
+
         <div id="page-wrapper">
 
             <div class="container-fluid">
@@ -48,7 +51,7 @@
 										</a>
 										</td>
 										<td>
-											<button type="button" onclick="cancelarCita(<?php echo $fila["PKCita"]; ?>);" class="btn btn-lg btn-danger">Cancelar Cita</button>
+											<button type="button" onclick="cancelarCita(<?php echo $fila["PKCita"]; ?>)" class="btn btn-lg btn-danger">Cancelar Cita</button>
 										</td>
                                     </tr>
 								<?php } ?>
@@ -58,6 +61,7 @@
                     </div>
                 </div>
                 <!-- /.row -->
+			
             </div>
             <!-- /.container-fluid -->	
         </div>
