@@ -1,7 +1,9 @@
 <?php include_once "views/institutionhead.php"; ?>
 <?php include_once "php/queries.php"; ?>
 
-
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+<script src="js/donaciones.js"></script>
         <div id="page-wrapper">
 
             <div class="container-fluid">
@@ -20,7 +22,8 @@
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
-                                        <th>Page</th>
+                                        <th></th>
+										<th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -44,6 +47,9 @@
 											</div>
 										</a>
 										</td>
+										<td>
+											<button type="button" onclick="cancelarCita(<?php echo $fila["PKCita"]; ?>);" class="btn btn-lg btn-danger">Cancelar Cita</button>
+										</td>
                                     </tr>
 								<?php } ?>
                                 </tbody>
@@ -60,10 +66,12 @@
     </div>
     <!-- /#wrapper -->
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+
+	
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+	
+	
 </body>
 </html>
