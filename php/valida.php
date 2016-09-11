@@ -19,6 +19,7 @@ if($valido == 0)
 	header("Location: ../?error");
 }
 else{
+	session_unset();
 	session_set_cookie_params(0);
 	session_start();
 	$row = mysql_fetch_row($resultado); 
