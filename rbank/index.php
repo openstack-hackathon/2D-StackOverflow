@@ -61,10 +61,10 @@
           <!-- Navigation -->
           <div class="android-navigation-container">
             <nav class="android-navigation mdl-navigation">
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Perfil</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Amigos</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Cita</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Configuración</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="perfil.php">Perfil</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="amigos.php">Amigos</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="cita.php">Cita</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="configuracion.php">Configuración</a>
             </nav>
           </div>
         </div>
@@ -75,10 +75,10 @@
           <img class="android-logo-image" src="images/1473541964_blood_drop_no_shadow.png">
         </span>
         <nav class="mdl-navigation">
-          <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Perfil</a>
-          <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Amigos</a>
-          <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Cita</a>
-          <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Configuración</a>
+          <a class="mdl-navigation__link mdl-typography--text-uppercase" href="perfil.php">Perfil</a>
+          <a class="mdl-navigation__link mdl-typography--text-uppercase" href="amigos.php">Amigos</a>
+          <a class="mdl-navigation__link mdl-typography--text-uppercase" href="cita.php">Cita</a>
+          <a class="mdl-navigation__link mdl-typography--text-uppercase" href="configuracion.php">Configuración</a>
         </nav>
       </div>
 
