@@ -20,7 +20,9 @@ if($valido == 1)
 	session_start();
 	$row = mysql_fetch_row($resultado); 
 
-	setcookie( "userlogin", "anonymous", $date_of_expiry );
+$cookie_name = 'usuario';
+$cookie_value = $row[2]." ".$row[3];
+setcookie($cookie_name, $cookie_value, time() + 6400, '/'); // 86400 = 1 day
 	
 	//Donador
 	if($row[1] == 1){
