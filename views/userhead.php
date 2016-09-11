@@ -62,7 +62,7 @@
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-nav side-nav">
 					<li <?php if($_GET["v"]=="h"){echo "class='active'"; } ?> >
-						<a href="home.php?v=h"><i class="fa fa-fw fa-edit"></i>Agenda una cita</a>
+						<a href="agendarcita.php?v=h"><i class="fa fa-fw fa-edit"></i>Agenda una cita</a>
 						<a href="amigos.php?v=a"><i class="fa fa-fw fa-edit"></i>Amigos y Familiares</a>
 						<a href="perfil.php?v=p"><i class="fa fa-fw fa-edit"></i>Mi Perfil</a>
 					</li>

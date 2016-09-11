@@ -54,6 +54,12 @@ function SaveCita($Comentarios, $PKCita, $Donacion){
 	return $resultado;
 }
 
+function SaveCitaUsuario($PKCita, $PKU, $cita){
+	$x = new createConnection();
+	$x -> connectToDatabase();
+	$resultado = mysqli_query($x->myconn,"INSERT INTO Citas (FKInstitucion,FKUsuario,Cita,status) VALUES ($PKCita,$PKU,'$cita',1)");
+	return $resultado;
+}
 
 function CancelarCita($PK){
 	$x = new createConnection();
