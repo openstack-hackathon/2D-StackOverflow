@@ -1,3 +1,7 @@
+.navbar{
+  margin-bottom: 0px;
+}
+
 .navbar-default{
 color: #fff;
 background-color: #ccc6c6;
@@ -77,4 +81,11 @@ border-color: #aca1a2;
   .navbar-nav .open .dropdown-menu .dropdown-header{
 	color:#fff;
   }
+}
+
+#map{
+  position: relative;
+  margin-top: 2px,2px,2px,2px;
+    width: 490px;
+    height: 550px;
 }
