@@ -12,7 +12,6 @@
       </head>
   <body>
 
-
 	  <!-- intro area -->	  
 	  <div id="intro">
 	  
@@ -152,7 +151,7 @@
 				'hcg.udg.mx'+
 				'01 33 3942 4400 ' +
 				'</p>'+
-		      '<p>Agendar Cita, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">'+
+		      '<p>Agendar Cita, <a href="cita.php">'+
 		      'click Aquí</a> '+
 		      '</div>'+
 		      '</div>';
@@ -169,9 +168,6 @@
 
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9iHyImLPrjVlvdRpgj6oIonptrvkItkM&callback=initMap"async defer></script>
-
-
-
                                           
 					</div>
 				  </div>
